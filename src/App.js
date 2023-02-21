@@ -3,15 +3,28 @@ import './App.css';
 import React, { Component } from 'react'
 import NavBar from './Components/NavBar'  
 import NewsItem from './Components/NewsItem'
+import LoadingBar from 'react-top-loading-bar'
 
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 
 export default class App extends Component {
   pageSize=15;
+
+  setProgress(progress){
+    this.setProgress({progress:progress})
+  }
+
+  
+
   render() {
     return (
       <div>
         <Router>
+        <LoadingBar
+        color='#f11946'
+        progress={10}
+        //onLoaderFinished={() => setProgress(0)}
+        />
         <NavBar/>
           <Routes>
           <Route exact path='/' element={<NewsItem key="general" pageSize={this.pageSize} country="in" category="general"/>} />
