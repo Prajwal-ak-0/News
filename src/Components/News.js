@@ -7,8 +7,14 @@ export class News extends Component {
     return (
       <div className='my-3'>
         <div className="card" >
-        <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'90%', zIndex:1}} >{source}</span>
-
+          <div style={{display:'flex',
+          justifyContent:'flex-end',
+          position:'absolute',
+          right: '0'
+          
+          }}>
+        <span className="badge rounded-pill bg-danger">{source}</span>
+        </div>
             <img src={!imageUrl?"https://media.gettyimages.com/id/1311148884/vector/abstract-globe-background.jpg?s=612x612&w=gi&k=20&c=G5uPfn2VTF3aXCr76pn1T7oWE-aHVQ0rAYMl_MK2OvM=":imageUrl} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
